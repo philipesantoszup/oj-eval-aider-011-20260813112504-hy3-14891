@@ -45,7 +45,7 @@ private:
     static Node* merge_trees(Node *a, Node *b, Compare &cmp) {
         if (!a) return b;
         if (!b) return a;
-        if (cmp(b->data, a->data)) {
+        if (cmp(a->data, b->data)) {
             Node *tmp = a; a = b; b = tmp;
         }
         a->right = merge_trees(a->right, b, cmp);
